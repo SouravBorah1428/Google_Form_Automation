@@ -1,24 +1,20 @@
-# Project Name - _Project Author (Change Me)_
+# Google Form Automation - Sourav Borah
 
 ## Project Name and Description:
-A concise yet descriptive title and an overview of the project’s purpose.
+This project offers an automated solution for submitting responses to Google Forms using Selenium WebDriver. By automating the form submission process, users can save time and effort typically spent on manual data entry tasks. The automation script interacts with the Google Form, filling out the required fields and submitting responses programmatically. This project is designed to enhance productivity and streamline data collection workflows for users who regularly engage with Google Forms.
 
 ## Installation Instructions:
-Clear steps to set up and run the project locally.
-> Example:
 ```
-# java version 17
-java --version
+Clone the repo into your local environment
+Install JAVA JDK 17 or above
+Install Selenium Webdriver on your local environment
+Install ChromeDriver on your local environment
 ```
 
 ## Usage and Examples:
-Provide sample code or usage scenarios to showcase how the project works.
-> Example:
+
 ```
 # to run the project
 ./gradlew run
 ```
-
-## Important Links:
-Details about useful external links
  
