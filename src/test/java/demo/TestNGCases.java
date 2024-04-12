@@ -19,7 +19,7 @@ import java.util.Date;
 public class TestNGCases {
     ChromeDriver driver;
 
-    @BeforeSuite (enabled = true)
+    @BeforeSuite
     public void setupChromeDriver() {
         WebDriverManager.chromedriver().timeout(30).setup();
         driver = new ChromeDriver();
@@ -29,7 +29,7 @@ public class TestNGCases {
         PageFactory.initElements(driver, Elements.class);
     }
 
-    @Test (description = "Verify user can enter their name", priority = 1,enabled = true)
+    @Test (description = "Verify user can enter their name", priority = 1)
     public void testCase01() {
         driver.get("https://docs.google.com/forms/d/e/1FAIpQLSep9LTMntH5YqIXa5nkiPKSs283kdwitBBhXWyZdAS-e4CxBQ/viewform");
 
@@ -38,36 +38,36 @@ public class TestNGCases {
 
         Actions.type(Elements.nameField, "Sourav Borah");
 
-        Assert.assertTrue(Elements.nameField.getAttribute("data-initial-value").equals("Sourav Borah"));
+        Assert.assertEquals(Elements.nameField.getAttribute("data-initial-value"), "Sourav Borah");
     }
 
-    @Test (description = "Verify user can enter their input in the input field", priority = 2, enabled = true)
+    @Test (description = "Verify user can enter their input in the input field", priority = 2)
     public void testCase02() {
         String currentEpochTime = String.valueOf(System.currentTimeMillis() / 1000);
 
         Actions.type(Elements.inputField,"I want to be the best QA Engineer! " + currentEpochTime);
 
-        Assert.assertTrue(Elements.inputField.getAttribute("data-initial-value").equals("I want to be the best QA Engineer! " + currentEpochTime));
+        Assert.assertEquals(Elements.inputField.getAttribute("data-initial-value"), "I want to be the best QA Engineer! " + currentEpochTime);
     }
 
-    @Test (description = "Verify user can select the radio button", priority = 3, enabled = true)
+    @Test (description = "Verify user can select the radio button", priority = 3)
     public void testCase03() {
         Actions.click(Elements.radioButton);
-        Assert.assertTrue(Elements.radioButton.getAttribute("aria-checked").equals("true"));
+        Assert.assertEquals(Elements.radioButton.getAttribute("aria-checked"), "true");
     }
 
-    @Test (description = "Verify user can select the checkboxes", priority = 4, enabled = true)
+    @Test (description = "Verify user can select the checkboxes", priority = 4)
     public void testCase04() {
         Actions.click(Elements.checkBox1);
         Actions.click(Elements.checkBox2);
         Actions.click(Elements.checkBox4);
 
-        Assert.assertTrue(Elements.checkBox1.getAttribute("aria-checked").equals("true"));
-        Assert.assertTrue(Elements.checkBox2.getAttribute("aria-checked").equals("true"));
-        Assert.assertTrue(Elements.checkBox4.getAttribute("aria-checked").equals("true"));
+        Assert.assertEquals(Elements.checkBox1.getAttribute("aria-checked"), "true");
+        Assert.assertEquals(Elements.checkBox2.getAttribute("aria-checked"), "true");
+        Assert.assertEquals(Elements.checkBox4.getAttribute("aria-checked"), "true");
     }
 
-    @Test (description = "Verify user can the correct option from the dropdown", priority = 5, enabled = true)
+    @Test (description = "Verify user can the correct option from the dropdown", priority = 5)
     public void testCase05() {
         Actions.click(Elements.titleDropDown);
 
@@ -81,7 +81,7 @@ public class TestNGCases {
         Assert.assertEquals(Elements.titleCorrectOption.getText(), "Mr");
     }
 
-    @Test (description = "Verify user can enter the date", priority = 6, enabled = true)
+    @Test (description = "Verify user can enter the date", priority = 6)
     public void testCase06() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -94,7 +94,7 @@ public class TestNGCases {
         Assert.assertEquals(Elements.dateField.getAttribute("data-initial-value"), latestDate.substring(6) + "-" + latestDate.substring(3,5) + "-" + latestDate.substring(0,2));
     }
 
-    @Test (description = "Verify user can enter the time", priority = 7, enabled = true)
+    @Test (description = "Verify user can enter the time", priority = 7)
     public void testCase07() {
         //  Actions.click(Elements.am_pm_dropdown);
         //
@@ -117,7 +117,7 @@ public class TestNGCases {
         Assert.assertEquals(Elements.minuteField.getAttribute("data-initial-value"), latestTime.substring(3, 5));
     }
 
-    @Test (description = "Verify user can dismiss the alerts", priority = 8, enabled = true)
+    @Test (description = "Verify user can dismiss the alerts", priority = 8)
     public void testCase08() {
         String currentUrl = driver.getCurrentUrl();
 
@@ -128,7 +128,7 @@ public class TestNGCases {
         Assert.assertEquals(driver.getCurrentUrl(), currentUrl);
     }
 
-    @Test (description = "Verify user can submit the form successfully", priority = 9, enabled = true)
+    @Test (description = "Verify user can submit the form successfully", priority = 9)
     public void testCase09() {
         Actions.click(Elements.submitBtn);
 
@@ -140,7 +140,7 @@ public class TestNGCases {
         Assert.assertTrue(driver.getCurrentUrl().contains("/formResponse"));
     }
 
-    @AfterSuite (enabled = true)
+    @AfterSuite
     public void endTest()
     {
         driver.close();
