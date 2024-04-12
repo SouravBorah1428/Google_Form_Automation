@@ -10,16 +10,20 @@ public class Elements {
     @FindBy (xpath = "//textarea[@aria-label='Your answer']")
     public static WebElement inputField;
 
-    @FindBy (xpath = "//div[@class='SG0AAe']/child::div[1]")
+//    @FindBy (xpath = "//div[@class='SG0AAe']/child::div[1]")
+    @FindBy (xpath = "//div[@id='i13']")
     public static WebElement radioButton;
 
-    @FindBy (xpath = "//div[@class='Y6Myld']//div[@role='list']/child::div[1]")
+//    @FindBy (xpath = "//div[@class='Y6Myld']//div[@role='list']/child::div[1]")
+    @FindBy (xpath = "//div[@id='i30']")
     public static WebElement checkBox1;
 
-    @FindBy (xpath = "//div[@class='Y6Myld']//div[@role='list']/child::div[2]")
+//    @FindBy (xpath = "//div[@class='Y6Myld']//div[@role='list']/child::div[2]")
+    @FindBy (xpath = "//div[@id='i36']")
     public static WebElement checkBox2;
 
-    @FindBy (xpath = "//div[@class='Y6Myld']//div[@role='list']/child::div[4]")
+//    @FindBy (xpath = "//div[@class='Y6Myld']//div[@role='list']/child::div[4]")
+    @FindBy (xpath = "//div[@id='i39']")
     public static WebElement checkBox4;
 
     @FindBy (xpath = "//div[@class='MocG8c HZ3kWc mhLiyf LMgvRb KKjvXb DEh1R']")
@@ -28,7 +32,7 @@ public class Elements {
     @FindBy (xpath = "//*[@id='mG61Hd']/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[2]")
     public static WebElement titleOptions;
 
-    @FindBy (xpath = "//*[@id='mG61Hd']/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[2]/div[3]/span")
+    @FindBy (xpath = "//div[@role='option']//span[@class='vRMGwf oJeWuf'][normalize-space()='Mr']")
     public static WebElement titleCorrectOption;
 
     @FindBy (xpath = "//*[@id='mG61Hd']/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div/div[2]/div[1]/div/div[1]/input")

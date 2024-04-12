@@ -1,8 +1,9 @@
-<!DOCTYPE suite SYTSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Google Form Automation">
     <test name="Google Form Automation Test">
         <classes>
             <class name="demo.TestNGCases">
+            </class>
         </classes>
     </test>
 </suite>
